@@ -127,9 +127,10 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 }
 
 .project-card-featured .project-card-cover {
-  width: min(82%, 620px);
-  height: 58%;
-  mix-blend-mode: multiply;
+  bottom: 0;
+  width: min(100%, 1200px);
+  height: 100%;
+  object-fit: cover;
 }
 
 .project-card[href="#/work/form"] .project-card-cover {
@@ -138,7 +139,9 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 }
 
 .project-card[href="#/work/field"] .project-card-cover {
-  filter: drop-shadow(0 12px 12px rgb(22 25 30 / .16));
+  bottom: 13%;
+  width: min(67%, 470px);
+  filter: drop-shadow(0 8px 9px rgb(22 25 30 / .14));
 }
 
 .project-card-copy {
@@ -179,6 +182,8 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 .project-card-featured {
   grid-column: 1 / -1;
   min-height: clamp(525px, 49vw, 760px);
+  background: #000;
+  color: #f5f5f7;
 }
 
 .project-card-featured h3 {
