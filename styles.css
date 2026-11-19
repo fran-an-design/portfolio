@@ -149,6 +149,16 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
   object-position: center 58%;
 }
 
+.project-card-featured .project-card-cover {
+  object-position: center 74%;
+}
+
+@media (min-width: 1700px) {
+  .project-card-featured .project-card-cover {
+    object-position: center 80%;
+  }
+}
+
 .project-card-copy {
   padding: clamp(26px, 4vw, 56px) 20px 0;
 }
