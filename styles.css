@@ -215,12 +215,12 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .project-card-link:hover {
+  .project-card:hover .project-card-link {
     border-color: color-mix(in srgb, currentColor 55%, transparent);
   }
 }
 
-.project-card-link:active {
+.project-card .project-card-link:active {
   border-color: color-mix(in srgb, currentColor 75%, transparent);
 }
 
@@ -233,7 +233,7 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
     transition: transform 180ms cubic-bezier(.2, .7, .3, 1);
   }
 
-  .project-card-link:hover .project-card-arrow {
+  .project-card:hover .project-card-arrow {
     transform: translate(2px, -2px);
   }
 }
