@@ -96,9 +96,10 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 }
 
 .card-grid {
+  --work-gutter: 12px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: var(--work-gutter);
 }
 
 .project-card {
@@ -194,18 +195,18 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 
 @media (min-width: 701px) {
   .card-grid {
-    padding-inline: 12px;
+    padding-inline: var(--work-gutter);
   }
 
   .project-card-featured {
     align-items: center;
     justify-items: start;
-    margin-inline: -12px;
-    text-align: left;
+    margin-inline: calc(-1 * var(--work-gutter));
   }
 
   .project-card-featured .project-card-copy {
-    padding: 0 0 0 clamp(40px, 10vw, 168px);
+    width: calc(50% + var(--work-gutter) / 2);
+    padding: 0;
   }
 }
 
