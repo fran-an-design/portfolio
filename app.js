@@ -11,13 +11,13 @@ const projectTile = (project, index) => `
     <img class="project-card-cover" src="assets/cover-${project.slug}.webp" alt="" loading="lazy" decoding="async">
     <div class="project-card-copy">
       <h3>${project.client}</h3>
-      <span class="project-card-link">View project <span aria-hidden="true">↗</span></span>
+      <span class="project-card-link">View project <span class="project-card-arrow" aria-hidden="true">↗</span></span>
     </div>
   </a>`;
 const home=()=>`<div class="page"><section class="hero"><div class="hero-topline"><span>Independent designer<br>Selected works © 2026</span><span>Available worldwide<br>Based on Earth</span></div><h1><span>Designing and</span><span>building</span><span>what’s next.</span></h1><img class="hero-art" src="assets/hero.png" alt="A sculptural silver bird in motion"><div class="hero-bottom"><span>FRAN / DESIGNER</span><a href="#selected-work" data-scroll-work>SCROLL TO EXPLORE ↓</a></div></section><section class="intro"><p class="eyebrow">/ 01. OVERVIEW</p><div><h2>Hi, I’m Fran. I design thoughtful digital experiences for a more human world.</h2><p>I believe great design begins with curiosity. I work across strategy, product, and visual design to turn complex ideas into clear, meaningful experiences.</p><a class="text-link" href="#/about">A little more about me <span>↗</span></a></div></section></div>
 <section class="section" id="selected-work" aria-labelledby="selected-work-heading">
   <h2 class="visually-hidden" id="selected-work-heading">Selected work</h2>
-  <div class="card-grid">${projects.map(projectTile).join('')}</div>
+  <div class="card-grid">${projects.slice(0, 3).map(projectTile).join('')}</div>
 </section>`;
 const work=()=>`<div class="page inner-page"><h1 class="page-title">Case studies</h1><p class="page-lead">A selection of projects exploring how thoughtful design can make things work better for people.</p><section class="work-list section">${projects.map(featured).join('')}</section></div>`;
 const about=()=>`<div class="page inner-page"><h1 class="page-title">A little about me.</h1><div class="about-layout"><h2>I’m interested in the space between a good idea and a meaningful experience.</h2><div><p>I’m Fran, a designer who loves making the complex feel simple. My work brings together curiosity, collaboration, and a belief that the details really do matter.</p><p>From the first sketch to the final interaction, I enjoy partnering with people who care about creating thoughtful things that make everyday life a little better.</p><a class="text-link" href="#/contact">Let’s work together <span>↗</span></a></div></div><div class="timeline"><div><span>2023 — PRESENT</span><strong>Independent designer</strong><p>Product & digital experiences</p></div><div><span>2020 — 2023</span><strong>Design studio</strong><p>Senior product designer</p></div><div><span>2017 — 2020</span><strong>Creative practice</strong><p>Digital designer</p></div></div></div>`;
