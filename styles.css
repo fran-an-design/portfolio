@@ -102,7 +102,6 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 }
 
 .project-card {
-  --cover-background: #f5f5f7;
   position: relative;
   display: grid;
   align-items: start;
@@ -110,29 +109,20 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
   min-height: clamp(440px, 42vw, 620px);
   overflow: hidden;
   isolation: isolate;
-  background: var(--cover-background);
+  background: #f0f0f2;
   color: #202222;
   text-align: center;
 }
 
-.project-card::after,
 .project-card-cover {
   position: absolute;
   inset: 0;
+  z-index: -1;
   width: 100%;
   height: 100%;
-}
-
-.project-card::after {
-  z-index: -1;
-  content: '';
-  background: linear-gradient(to bottom, var(--cover-background) 16%, transparent 32%);
-}
-
-.project-card-cover {
-  z-index: -2;
   object-fit: cover;
   object-position: center 58%;
+  filter: drop-shadow(0 12px 16px rgb(22 25 30 / .16));
 }
 
 .project-card-featured .project-card-cover {
@@ -226,6 +216,11 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 @media (max-width: 700px) {
   .card-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-card:not(.project-card-featured) .project-card-cover {
+    object-fit: contain;
+    object-position: center 74%;
   }
 
   .project-card {
