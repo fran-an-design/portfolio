@@ -127,10 +127,12 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 }
 
 .project-card-featured .project-card-cover {
-  bottom: 0;
-  width: min(100%, 1200px);
+  inset: 0;
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 76% bottom;
+  transform: none;
 }
 
 .project-card[href="#/work/form"] .project-card-cover {
@@ -182,7 +184,7 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 .project-card-featured {
   grid-column: 1 / -1;
   min-height: clamp(525px, 49vw, 760px);
-  background: #202020;
+  background: #0a2730;
   color: #f5f5f7;
 }
 
@@ -196,7 +198,14 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
   }
 
   .project-card-featured {
+    align-items: center;
+    justify-items: start;
     margin-inline: -12px;
+    text-align: left;
+  }
+
+  .project-card-featured .project-card-copy {
+    padding: 0 0 0 clamp(40px, 10vw, 168px);
   }
 }
 
