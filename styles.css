@@ -165,11 +165,10 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 
 .project-card h3 {
   margin: 0 0 14px;
-  font-family: 'DM Serif Display', Georgia, serif;
   font-size: clamp(32px, 4.2vw, 58px);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: -.025em;
+  letter-spacing: -.045em;
 }
 
 .project-card-link {
