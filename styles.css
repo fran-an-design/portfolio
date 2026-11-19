@@ -182,7 +182,7 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 .project-card-featured {
   grid-column: 1 / -1;
   min-height: clamp(525px, 49vw, 760px);
-  background: #000;
+  background: #202020;
   color: #f5f5f7;
 }
 
