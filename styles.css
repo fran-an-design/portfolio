@@ -102,9 +102,7 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 }
 
 .project-card {
-  --cover-background: #ededea;
-  --cover-ink: #202222;
-  --cover-shade: rgb(246 246 243 / .9);
+  --cover-background: #f5f5f7;
   position: relative;
   display: grid;
   align-items: start;
@@ -113,20 +111,8 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
   overflow: hidden;
   isolation: isolate;
   background: var(--cover-background);
-  color: var(--cover-ink);
+  color: #202222;
   text-align: center;
-}
-
-.project-card[href="#/work/form"] {
-  --cover-background: #f1e9e7;
-  --cover-ink: #211914;
-  --cover-shade: rgb(250 244 240 / .94);
-}
-
-.project-card[href="#/work/field"] {
-  --cover-background: #e8eff5;
-  --cover-ink: #172330;
-  --cover-shade: rgb(240 246 251 / .9);
 }
 
 .project-card::after,
@@ -140,7 +126,7 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 .project-card::after {
   z-index: -1;
   content: '';
-  background: linear-gradient(to bottom, var(--cover-shade), transparent 47%);
+  background: linear-gradient(to bottom, var(--cover-background) 16%, transparent 32%);
 }
 
 .project-card-cover {
