@@ -163,8 +163,6 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 }
 
 .project-card-link {
-  position: relative;
-  isolation: isolate;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -172,21 +170,10 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
   padding: 0 16px;
   border: 1px solid color-mix(in srgb, currentColor 32%, transparent);
   border-radius: 999px;
-  background: color-mix(in srgb, currentColor 6%, transparent);
+  background: transparent;
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
-}
-
-.project-card-link::before {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  border-radius: inherit;
-  background: currentColor;
-  opacity: 0;
-  pointer-events: none;
-  content: '';
 }
 
 .project-card:focus-visible {
@@ -218,18 +205,18 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .project-card-link:hover::before {
-    opacity: .12;
+  .project-card-link:hover {
+    border-color: color-mix(in srgb, currentColor 55%, transparent);
   }
 }
 
-.project-card-link:active::before {
-  opacity: .18;
+.project-card-link:active {
+  border-color: color-mix(in srgb, currentColor 75%, transparent);
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .project-card-link::before {
-    transition: opacity 150ms ease-out;
+  .project-card-link {
+    transition: border-color 150ms ease-out;
   }
 
   .project-card-arrow {
