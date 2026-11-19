@@ -6,7 +6,7 @@
 /* The opening artwork is deliberately layered through the headline. */
 .hero{height:100svh;min-height:700px;display:block;padding:0;overflow:hidden}
 .hero h1{position:absolute;top:23%;left:5%;width:90%;margin:0;z-index:2}
-.hero-art{position:absolute;z-index:3;left:50%;top:54%;width:clamp(300px,39vw,510px);height:40%;margin:0;transform:translateX(-50%);object-fit:contain;pointer-events:none}
+.hero-art{position:absolute;z-index:3;left:50%;top:54%;width:clamp(300px,39vw,510px);height:40%;margin:0;transform:translate(-50%, var(--bird-shift, 0px));object-fit:contain;pointer-events:none}
 .hero-bottom{position:absolute;left:5%;right:5%;bottom:35px;margin:0;z-index:4}
 
 /* Both labels stay mounted so the pill can morph instead of jumping. */
@@ -59,7 +59,12 @@ body.dark .project-image.line-art img,body.dark .case-cover.line-art img{filter:
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav,.brand,.nav-links a,.brand-name,.nav-label,.nav-icon,.avatar,.project-image img,.reading-progress span{transition:none!important}}
 .line-art{position:relative}.line-art .art-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}.line-art.art-ready img{opacity:0}
 .project-image.line-art,.case-cover.line-art{background:var(--surface)}
-@media(max-width:700px){.hero-art{top:31%}}
+@media(max-width:700px){
+  .hero-art{top:31%;transform:translate(-50%, calc(var(--bird-shift, 0px) * .7))}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-art{transform:translateX(-50%)}
+}
 body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(--surface)}
 
 /* Fine portrait particles are a hover state; clicking remains navigation. */
@@ -97,9 +102,9 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
 }
 
 .project-card {
-  --cover-background: #111a2d;
-  --cover-ink: #fff;
-  --cover-shade: rgb(5 10 21 / .92);
+  --cover-background: #ededea;
+  --cover-ink: #202222;
+  --cover-shade: rgb(246 246 243 / .9);
   position: relative;
   display: grid;
   align-items: start;
@@ -116,6 +121,12 @@ body.dark .project-image.line-art,body.dark .case-cover.line-art{background:var(
   --cover-background: #f1e9e7;
   --cover-ink: #211914;
   --cover-shade: rgb(250 244 240 / .94);
+}
+
+.project-card[href="#/work/field"] {
+  --cover-background: #e8eff5;
+  --cover-ink: #172330;
+  --cover-shade: rgb(240 246 251 / .9);
 }
 
 .project-card::after,
